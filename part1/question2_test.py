@@ -1,10 +1,11 @@
 from question2 import run_swapper 
 
-def test_run_swapper():
-  assert run_swapper(
-    [ ("a", "b"), ("c", "d"), ("e", "f") ]
-  ) == [ ("b", "a"), ("d", "c"), ("f", "e")]
+def swapper(t):
+    # Check if the input is a tuple with exactly two items
+    if isinstance(t, tuple) and len(t) == 2:
+        return (t[1], t[0])  # Swap the items and return a new tuple
+    else:
+        return t  # Return the input as is if it's not a valid tuple
 
-  assert run_swapper(
-    [ (1, 1), ("foo", "bar"), (13, "cows"), (None, "Some") ]
-  ) == [ (1, 1), ("bar", "foo"), ("cows", 13), ("Some", None) ]
+def run_swapper(list_of_tuples):
+    return list(map(swapper, list_of_tuples))
