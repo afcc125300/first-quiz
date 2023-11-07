@@ -1,3 +1,6 @@
+import pets_db
+from question4 import sql_pets_owned_by_nobody, sql_only_owned_by_bessie, sql_pets_older_than_owner
+
 # Part 4.A: Select the pets that are owned by nobody.
 sql_pets_owned_by_nobody = """
 SELECT a.name, a.species, a.age
